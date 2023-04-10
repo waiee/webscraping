@@ -8,4 +8,5 @@ doc = BeautifulSoup(result.text, "html.parser")
 # print(doc.prettify)
 
 prices = doc.find_all(text="$")
-print(prices)
+# print(prices)
+
