@@ -1,8 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
 
-url = "https://www.newegg.ca/gigabyte-geforce-rtx-3080-ti-gv-n308tgaming-oc-12gd/p/N82E16814932436?Description=3080&cm_re=3080-_-14-932-436-_-Product"
+url = "https://www.newegg.ca/biostar-geforce-rtx-3080/p/1FT-003G-00012?Item=9SIBGVBJG73546&Description=gpu&cm_re=gpu-_-9SIBGVBJG73546-_-Product&cm_sp=SP-_-1728307-_-0-_-2-_-9SIBGVBJG73546-_-gpu-_-gpu-_-1"
 result = requests.get(url)
 # print(result.text)
 doc = BeautifulSoup(result.text, "html.parser")
-print(doc.prettify)
+# print(doc.prettify)
+
+prices = doc.find_all(text="$")
+print(prices)
