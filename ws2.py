@@ -4,5 +4,7 @@ import requests
 with open("index.html", "r") as f:
     doc = BeautifulSoup(f, "html.parser")
 
-result = doc.find("option")
-print(result)
+tag = doc.find("option")
+tag['value'] = 'false'
+tag['color'] = "blue"
+print(tag)
