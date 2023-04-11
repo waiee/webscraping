@@ -12,5 +12,8 @@ with open("index.html", "r") as f:
 
 # tag = doc.find_all(["p", "div", "li"]) #search multiple tags
 # tag = doc.find_all(["option"], text="Undergraduate", value="undergraduate")
-tag = doc.find_all(class_="btn-item")
-print(tag)
+# tag = doc.find_all(class_="btn-item")
+
+tag = doc.find_all(text=re.compile("\$.*")) #read dollar sign and its content
+for tag in tag:
+    print(tag.strip())
