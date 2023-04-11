@@ -15,4 +15,7 @@ trs = tbody.contents #table row
 # print(list(trs[0].descendants)) #everything inside tag
 
 prices = {}
-for tr in trs
+for tr in trs[:10]:
+    name, price = tr.contents[2:4]
+    fixed_name = name.p.string
+    print(price)
