@@ -14,6 +14,12 @@ with open("index.html", "r") as f:
 # tag = doc.find_all(["option"], text="Undergraduate", value="undergraduate")
 # tag = doc.find_all(class_="btn-item")
 
-tag = doc.find_all(text=re.compile("\$.*")) #read dollar sign and its content
+# tag = doc.find_all(text=re.compile("\$.*"), limit=1) #read dollar sign and its content
+tag = doc.find_all("input", type="text")
 for tag in tag:
-    print(tag.strip())
+    tag['placeholder'] = "i changed you mf" #change placeholder
+
+#save new html file
+with open("changed.html", "w") as file:
+    file.write(str(doc))
+
