@@ -7,4 +7,5 @@ with open("index.html", "r") as f:
 tag = doc.find("option")
 tag['value'] = 'false'
 tag['color'] = "blue"
+# print(tag.attrs) #print in dict
 print(tag)
